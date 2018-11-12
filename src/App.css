@@ -1,3 +1,35 @@
 .App {
+  display: flex;
+}
 
+.side-bar {
+  width: 200px;
+  height: 100vh;
+  background-color: #333;
+}
+
+.side-bar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-bar li {
+  padding: 10px;
+  margin-bottom: 5px;
+  transition: background-color 400ms ease-in;
+}
+
+.side-bar li:hover {
+  background-color: darkkhaki;
+}
+
+.side-bar a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.app-body {
+  position: relative;
+  flex: 1;
 }
