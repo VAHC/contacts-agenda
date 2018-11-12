@@ -19,7 +19,7 @@ class SearchableContactList extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={ 'searchable-contact-list' }>
         <SearchContact  onSearch={ this.handleOnSearch } />
         <ContactList contacts={ this.state.contacts } />
       </div>

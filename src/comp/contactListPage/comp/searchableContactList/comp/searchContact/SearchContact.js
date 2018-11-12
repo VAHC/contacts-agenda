@@ -15,7 +15,7 @@ class SearchContact extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={ 'search-contact' }>
         <input value={ this.state.searchValue } onChange={ this.handleSearchValueChange } />
         <button onClick={ this.handleSearchClick }>Buscar</button>
       </div>

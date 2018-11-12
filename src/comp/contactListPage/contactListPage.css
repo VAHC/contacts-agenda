@@ -1,0 +1,22 @@
+.searchable-contact-list {
+  padding: 15px;
+  margin: 15px;
+  border: 1px solid #dddddd;
+  width: 400px;
+  box-shadow: 2px 2px 40px -6px rgba(51,51,51,1);
+}
+
+.search-contact {
+  margin-bottom: 10px;
+}
+
+.search-contact button {
+  margin-left: 10px;
+}
+
+.contact-list-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: aliceblue;
+  cursor: pointer;
+}

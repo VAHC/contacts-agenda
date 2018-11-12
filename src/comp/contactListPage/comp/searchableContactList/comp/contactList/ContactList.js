@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ContactListItem from './comp/ContactListItem/ContactListItem';
 
 const ContactList = ({ contacts }) => (
-  <div>
+  <div className={ 'contact-list' }>
     {
       contacts.map(({ id, lastName, name, email }) => (
         <ContactListItem key={ id } lastName={ lastName } name={ name } email={ email }/>

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ContactListItem = ({ name, lastName, email }) => (
-  <div>
+  <div className={ 'contact-list-item'}>
     <div>{ `${ name } ${ lastName }` }</div>
     <div>{ email }</div>
   </div>

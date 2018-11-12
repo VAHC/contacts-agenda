@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchableContactList from './comp/searchableContactList/SearchableContactList';
+import './contactListPage.css';
 
 class ContactListPage extends React.Component {
   render() {
