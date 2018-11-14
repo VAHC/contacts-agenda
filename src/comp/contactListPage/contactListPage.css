@@ -20,3 +20,10 @@
   background-color: aliceblue;
   cursor: pointer;
 }
+
+.contact-detail-panel {
+  background-color: #dddddd;
+  margin: 15px;
+  padding: 15px;
+  width: 400px;
+}

@@ -1,15 +1,16 @@
 import React from 'react';
 import SearchableContactList from './comp/searchableContactList/SearchableContactList';
 import './contactListPage.css';
+import Header from '../layout/header';
 
 class ContactListPage extends React.Component {
   render() {
     return (
       <div>
+        <Header title={ 'Lista de Contactos' }/>
         <SearchableContactList />
-        <div>informacion irrelevante para la lista</div>
       </div>
-  )
+    )
   }
 }
 
