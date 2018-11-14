@@ -1,12 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import ContactForm from './comp/contactForm/ContactForm';
 import './contactDetailPage.css';
-import { contactsData } from '../contactListPage/contactsData';
 import Header from '../layout/header';
 
 class ContactDetailPage extends React.Component {
   render() {
-    const contact = contactsData[0];
+    const { contact } = this.props.history.location.state;
 
     return(
       <div>
@@ -17,5 +17,8 @@ class ContactDetailPage extends React.Component {
   }
 }
 
+ContactDetailPage.propTypes = {
+  history: PropTypes.object.isRequired
+};
 
 export default ContactDetailPage;
