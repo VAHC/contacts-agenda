@@ -1,15 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { contactsData } from '../../../contactListPage/contactsData';
 
 class ContactForm extends React.Component {
   constructor(props) {
     super(props);
-    const { name, lastName, email } = props.contact;
     this.state = {
-      name,
-      lastName,
-      email
-    };
+      contact: contactsData.find(contact => contact.id === props.contactId)
+    }
+    debugger;
   }
 
   handleInputChange = ev => this.setState({ [ev.target.name]: ev.target.value });
@@ -20,13 +19,13 @@ class ContactForm extends React.Component {
   };
 
   render() {
-    const { name, lastName, email } = this.state;
+    const { contact } = this.state;
     return(
       <div className={ 'contact-form' }>
         <form onSubmit={ this.handleFormSubmit }>
-          <label>Name: <input name={ 'name' } onChange={ this.handleInputChange } value={ name } /></label>
-          <label>Last Name: <input name={ 'lastName' } onChange={ this.handleInputChange } value={ lastName } /></label>
-          <label>Email: <input name={ 'email' }  onChange={ this.handleInputChange } value={ email }/></label>
+          <label>Name: <input name={ 'name' } onChange={ this.handleInputChange } value={ contact.name } /></label>
+          <label>Last Name: <input name={ 'lastName' } onChange={ this.handleInputChange } value={ contact.lastName } /></label>
+          <label>Email: <input name={ 'email' }  onChange={ this.handleInputChange } value={ contact.email }/></label>
           <input type="submit" value={ 'Save' } />
         </form>
       </div>
@@ -35,11 +34,7 @@ class ContactForm extends React.Component {
 }
 
 ContactForm.propTypes = {
-  contact: PropTypes.shape({
-    name: PropTypes.string,
-    lastName: PropTypes.string,
-    email: PropTypes.string
-  }).isRequired
+  contactId: PropTypes.number.isRequired
 };
 
 export default ContactForm;

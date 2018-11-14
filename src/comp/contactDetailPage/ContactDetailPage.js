@@ -6,12 +6,12 @@ import Header from '../layout/header';
 
 class ContactDetailPage extends React.Component {
   render() {
-    const { contact } = this.props.history.location.state;
+    const { contactId } = this.props.history.location.state;
 
     return(
       <div>
         <Header title={ `Edicion de contacto` }/>
-        <ContactForm contact={ contact } />
+        <ContactForm contactId={ contactId } />
       </div>
     )
   }
