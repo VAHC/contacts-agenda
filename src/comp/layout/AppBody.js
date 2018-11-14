@@ -10,6 +10,7 @@ const AppBody = () => (
     <Switch>
       <Route exact path="/" component={ HomePage } />
       <Redirect from={ '/home' } to={ '/' } />
+      <Redirect from={ '/afuera' } to={ '/' } />
       <Route path="/contact-list" component={ ContactListPage } />
       <Route path="/contact-detail" component={ ContactDetailPage } />
       <Route component={ NotFound } />

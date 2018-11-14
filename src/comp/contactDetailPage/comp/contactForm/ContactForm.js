@@ -6,9 +6,8 @@ class ContactForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      contact: contactsData.find(contact => contact.id === props.contactId)
+      contact: contactsData.find(contact => contact.id === parseInt(props.contactId))
     }
-    debugger;
   }
 
   handleInputChange = ev => this.setState({ [ev.target.name]: ev.target.value });

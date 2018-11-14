@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import ContactListItem from './comp/ContactListItem/ContactListItem';
 
 const ContactList = ({ contacts, history }) => {
-  const handleListItemClick = contact => history.push('/contact-detail', { contactId: contact.id });
+  const handleListItemClick = contact => history.push(`/contact-detail?contactId=${ contact.id }`);
 
   return (
     <div className={ 'contact-list' }>
