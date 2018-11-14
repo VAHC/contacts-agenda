@@ -5,8 +5,8 @@ import ContactListItem from './comp/ContactListItem/ContactListItem';
 const ContactList = ({ contacts }) => (
   <div className={ 'contact-list' }>
     {
-      contacts.map((contact) => (
-        <ContactListItem key={ contact.id } lastName={ contact.lastName } name={ contact.name } email={ contact.email } />
+      contacts.map(({ id, lastName, name, email }) => (
+        <ContactListItem key={ id } lastName={ lastName } name={ name } email={ email }/>
       ))
     }
   </div>
