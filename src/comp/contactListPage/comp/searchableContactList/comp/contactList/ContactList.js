@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
 import ContactListItem from './comp/ContactListItem/ContactListItem';
 
-const ContactList = ({ contacts, history }) => {
-  const handleListItemClick = contact => history.push(`/contact-detail?contactId=${ contact.id }`);
+const ContactList = ({ contacts, onContactClick }) => {
+  // const handleListItemClick = contact => history.push(`/contact-detail?contactId=${ contact.id }`);
+
 
   return (
     <div className={ 'contact-list' }>
       {
         contacts.map((contact) => (
-          <ContactListItem key={ contact.id } contact={ contact } onClick={ handleListItemClick } />
+          <ContactListItem key={ contact.id } contact={ contact } onClick={ () => onContactClick(contact.id) } />
         ))
       }
     </div>
@@ -19,7 +19,11 @@ const ContactList = ({ contacts, history }) => {
 
 ContactList.propTypes = {
   contacts: PropTypes.array.isRequired,
-  history: PropTypes.object.isRequired
+  onContactClick: PropTypes.func
 };
 
-export default withRouter(ContactList);
+ContactList.defaultProps = {
+  onContactClick: () => null
+};
+
+export default ContactList;

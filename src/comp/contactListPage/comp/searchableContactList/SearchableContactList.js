@@ -13,11 +13,13 @@ class SearchableContactList extends React.Component {
     this.props.contactsActions.fetchContacts(searchValue);
   };
 
+  handleContactListItemClick = contactId => this.props.contactsActions.fetchContact(contactId);
+
   render() {
     return (
       <div className={ 'searchable-contact-list' }>
         <SearchContact  onSearch={ this.handleOnSearch } />
-        <ContactList contacts={ this.props.contacts } />
+        <ContactList contacts={ this.props.contacts } onContactClick={ this.handleContactListItemClick } />
       </div>
     )
   }

@@ -33,7 +33,7 @@ class ContactForm extends React.Component {
 }
 
 ContactForm.propTypes = {
-  contactId: PropTypes.number.isRequired
+  contactId: PropTypes.string.isRequired
 };
 
 export default ContactForm;
