@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchableContactList from './comp/searchableContactList/SearchableContactList';
+import SearchableContactList from './comp/searchableContactList/SearchableContactListConnector';
 import './contactListPage.css';
 import Header from '../layout/header';
 
