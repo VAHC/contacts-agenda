@@ -1,20 +1,27 @@
 import React from 'react';
 import SearchContact from './comp/searchContact/SearchContact';
 import ContactList from './comp/contactList/ContactList';
-import { contactsData } from '../../contactsData';
+import axios from 'axios';
 
 class SearchableContactList extends React.Component {
   constructor(props) {
     super(props);
+    axios.get('/contacts')
+      .then(response => {
+        this.setState({ contacts: response.data });
+      })
+      .catch(error => { throw error; });
     this.state = {
-      contacts: contactsData
+      contacts: []
     }
   }
 
   handleOnSearch = searchValue => {
-    this.setState({
-      contacts: contactsData.filter(contact => contact.name.toLowerCase().includes(searchValue.toLowerCase()))
-    });
+    axios.get('/contacts')
+      .then(response => {
+        this.setState({ contacts: response.data.filter(contact => contact.name.toLowerCase().includes(searchValue.toLowerCase())) });
+      })
+      .catch(error => { throw error; });
   };
 
   render() {

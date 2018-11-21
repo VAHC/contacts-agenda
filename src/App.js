@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import './config/request';
 import './App.css';
 import SideBar from './comp/layout/Sidebar';
 import AppBody from './comp/layout/AppBody';
