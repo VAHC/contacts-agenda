@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { contactsData } from '../../../contactListPage/contactsData';
 
 class ContactForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      contact: contactsData.find(contact => contact.id === parseInt(props.contactId))
+      contact: props.selectedContact
     }
   }
 
@@ -33,7 +32,8 @@ class ContactForm extends React.Component {
 }
 
 ContactForm.propTypes = {
-  contactId: PropTypes.string.isRequired
+  contactId: PropTypes.string.isRequired,
+  selectedContact: PropTypes.object
 };
 
 export default ContactForm;

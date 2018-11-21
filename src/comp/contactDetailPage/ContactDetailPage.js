@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import ContactForm from './comp/contactForm/ContactForm';
+import ContactForm from './comp/contactForm/ContactFormConnector';
 import queryString from 'query-string';
 import './contactDetailPage.css';
 import Header from '../layout/header';

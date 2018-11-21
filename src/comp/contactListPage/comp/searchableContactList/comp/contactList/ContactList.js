@@ -10,7 +10,7 @@ const ContactList = ({ contacts, onContactClick }) => {
     <div className={ 'contact-list' }>
       {
         contacts.map((contact) => (
-          <ContactListItem key={ contact.id } contact={ contact } onClick={ () => onContactClick(contact.id) } />
+          <ContactListItem key={ contact._id } contact={ contact } onClick={ () => onContactClick(contact._id) } />
         ))
       }
     </div>

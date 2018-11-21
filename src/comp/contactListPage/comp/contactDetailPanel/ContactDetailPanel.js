@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ContactDetailPanel = ({ contact, onEdit }) => {
-  const handleOnEditClick = () => onEdit(contact.id);
+  const handleOnEditClick = () => onEdit(contact._id);
 
   return (
     <div>
