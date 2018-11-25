@@ -1,20 +1,24 @@
 import React from 'react';
-import ContactForm from './comp/contactForm/ContactForm';
+import PropTypes from 'prop-types';
+import ContactForm from './comp/contactForm/ContactFormConnector';
 import './contactDetailPage.css';
-import { contactsData } from '../contactListPage/contactsData';
 import Header from '../layout/header';
 
 class ContactDetailPage extends React.Component {
   render() {
-    const contact = contactsData[0];
+    const { contactId } = this.props.history.location.state;
 
     return(
       <div>
         <Header title={ `Edicion de contacto` }/>
-        <ContactForm contact={ contact } />
+        <ContactForm contactId={ contactId } />
       </div>
     )
   }
+}
+
+ContactDetailPage.propTypes = {
+  history: PropTypes.object.isRequired
 }
 
 

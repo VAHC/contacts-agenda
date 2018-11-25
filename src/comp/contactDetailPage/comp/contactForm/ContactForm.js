@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 class ContactForm extends React.Component {
   constructor(props) {
     super(props);
+    props.contactsActions.fetchContact(props.contactId);
+    props.powersActions.fetchPowers();
     const { name, lastName, email } = props.contact;
     this.state = {
       name,
@@ -28,6 +30,14 @@ class ContactForm extends React.Component {
           <label>Last Name: <input name={ 'lastName' } onChange={ this.handleInputChange } value={ lastName } /></label>
           <label>Email: <input name={ 'email' }  onChange={ this.handleInputChange } value={ email }/></label>
           <input type="submit" value={ 'Save' } />
+          <select>
+            {
+              this.props.powers.map(power => (
+                <option value={ power._id }>{ power.name }</option>
+              ))
+            }
+
+          </select>
         </form>
       </div>
     )
