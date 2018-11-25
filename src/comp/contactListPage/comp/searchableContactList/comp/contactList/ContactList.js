@@ -8,7 +8,7 @@ const ContactList = ({ contacts, contactsActions }) => {
     <div className={ 'contact-list' }>
       {
         contacts.map(contact => (
-          <ContactListItem contact={ contact } onContactClick={ handleContactClick } key={ contact.id } />
+          <ContactListItem contact={ contact } onContactClick={ handleContactClick } key={ contact._id } />
         ))
       }
     </div>

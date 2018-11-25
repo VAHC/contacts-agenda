@@ -11,7 +11,7 @@ const ContactDetailPanel = ({ contact, onEdit }) => (
       <div>
         <p>Super Poderes</p>
         <ul>
-          { contact.powers.map(power => <li>{ power }</li>) }
+          { contact.powers.map(power => <li key={ power }>{ power }</li>) }
         </ul>
       </div>
     }
@@ -24,8 +24,8 @@ ContactDetailPanel.propTypes = {
     name: PropTypes.string,
     lastName: PropTypes.string,
     email: PropTypes.string,
-    powers: PropTypes.array.isRequired
-  }).isRequired,
+    powers: PropTypes.array
+  }),
   onEdit: PropTypes.func
 };
 
